@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <footer>
+        <!-- Crystal Lake, Illinois, -->
+        <small>Konyo museum, 1578 glacier circle, crystal lake &COPY; 2024 </small>
+
+        <button onclick="toggleChat()" class="chat-toggle">Message us</button>
+
+        <fieldset id="chatContainer">
+            <div class="chat-header">
+              <label for="messageInput">
+               <h4>Let us hear from you</h4>
+            </label>
+
+              <button onclick="closeChat()" class="close-btn">X</button>
+            </div>
+
+            <form action="https://formsubmit.co/el/wiroxa" method="POST">
+                {% csrf_token %}
+                <input type="text" name="first_name" placeholder="First name" required>
+                <input type="text" name="last_name" placeholder="Last name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="body" placeholder="Message" required></textarea>
+                <div>
+                    <button onclick="sendMessage()" id="send">Send</button>
+                </div>
+            </form>
+
+
+            <!-- <div id="chatBody" class="chat-body"></div>
+            <div class="chat-footer">
+              <input type="text" id="messageInput" placeholder="Type your message..."/>
+              <button onclick="sendMessage()" id="send">Send</button>
+            </div> -->
+        </fieldset>
+    </footer>
+
+    <script src="{% static 'script/chat.js' %}"></script>
+</body>
+</html>

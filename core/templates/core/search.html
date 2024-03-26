@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <title>Store</title>
+</head>
+<body>
+  {% include 'core/navbar.html' %}
+
+    <main>
+        <form action="{% url 'search' %}" method="get">
+            <input type="search" name="q" placeholder="search products">
+            
+            <div class="back">
+                <a href="{{request.META.HTTP_REFERER}}"><i class="fa fa-arrow-left-long"></i></a>
+            </div>
+        </form>
+
+         
+        <div class="product-wrapper">
+            <div class="image-container" uk-lightbox>
+                <a href="{{ product.product_image.url }}">
+                    <img src="{{ product.product_image.url }}" alt="" class="product-image">
+                </a>
+            </div>
+            <div class="details">
+                <div class="tittle"><span>Title:</span> {{ product.title }}</div>
+                <div class="tittle"><span>Artist:</span> {{ product.artist }}</div>
+                <div class="tittle"><span>medium:</span> {{ product.medium }}</div>
+                <div class="tittle"><span>size:</span> {{ product.size }}</div>
+                <div class="price"><span>Price:</span> ${{product.price}}</div>
+                <a href="#" class="cart-button">Add to cart</a>
+            </div>
+        </div>
+    </main>
+
+    {% include 'core/footer.html' %}
+    
+    <script src="{% static 'script/uikit.js' %}"></script>
+</body>
+</html>

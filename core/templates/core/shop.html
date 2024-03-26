@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <title>Store</title>
+</head>
+<body>
+  {% include 'core/navbar.html' %}
+
+    
+
+    <main>
+        <form method="GET" action="{% url 'shop' %}">
+            <input type="search" name="q" placeholder="Search products" value="{{ query }}">
+        </form>
+        
+        {% if query %}
+            <h4>Search Results for "{{ query }}"</h4>
+            <a href="{% url 'shop' %}">clear results</a>
+        {% endif %}
+
+        <section>
+            {% for product in products %}
+            <div class="product-wrapper">
+                <div class="image-container" uk-lightbox>
+                    <a href="{{ product.product_image.url }}">
+                        <img src="{{ product.product_image.url }}" alt="" class="product-image">
+                    </a>
+                </div>
+                <div class="details">
+                    <div class="tittle"><span>Title:</span> {{ product.title }}</div>
+                    <div class="price"><span>Price:</span> ${{ product.price }}</div>
+                    <a href="{% url 'product_detail' product_id=product.id %}" class="details-page">more details</a>
+                    
+                    <!-- Modify your existing "Add to cart" button in the product loop -->
+                    <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            {% for results in results %}
+            <div class="product-wrapper">
+                <div class="image-container" uk-lightbox>
+                    <a href="{{ product.product_image.url }}">
+                        <img src="{{ product.product_image.url }}" alt="" class="product-image">
+                    </a>
+                </div>
+                <div class="details">
+                    <div class="tittle"><span>Title:</span> {{ product.title }}</div>
+                    <div class="price"><span>Price:</span> ${{ product.price }}</div>
+                    
+                    <!-- Modify your existing "Add to cart" button in the product loop -->
+                    <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    {% include 'core/footer.html' %}
+    
+    <script src="{% static 'script/uikit.js' %}"></script>
+</body>
+</html>

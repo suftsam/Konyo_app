@@ -1,0 +1,104 @@
+
+footer{
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6svh;
+    background: brown;
+    color: gold;
+}
+
+
+
+/* Chat styling start */
+.chat-toggle{
+    background: gold;
+    color: brown;
+    border-radius: 5px;
+    padding: 3px;
+    transition: .3s linear;
+}
+.chat-toggle:hover{
+    box-shadow: 0 0 3px 1px black;
+}
+
+#chatContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 1px;
+    right: 1px;
+    width: 300px;
+    height: 400px;
+    background-color: #000000e0;
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+  .chat-header, .cart-header {
+    border-bottom: 2px solid gold;
+    padding: 10px;
+    font-weight: 500;
+    font-style: italic;
+}
+.close-btn{
+    font-size: 18px;
+    padding: 2px 5px;
+    color: red;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.chat-body {
+    height: 300px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.chat-footer {
+    padding: 5px;
+    border-top: 2px solid brown;
+}
+#chatContainer input,
+    textarea{
+        width: 98%;
+        padding: 5px;
+        border-radius: 3px;
+        margin: 4px;   
+        background:  #a52a2aa1;
+        outline: none; 
+    }
+    textarea{
+        height: 180px;
+    }
+
+form div{
+    width: 100%;
+    text-align: center;
+}
+
+#send{
+    height: 33px;
+    background: gold;
+    outline: 0;
+    border: 0;
+    margin: 0 auto;
+    color: brown;    
+    text-shadow: 1px 1px 1px black;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: .1s linear;
+    cursor: auto;
+}
+#send:hover{
+    background: #ffd900ac;
+    text-shadow: 0 2px 4px black;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+/* Chat styling end */

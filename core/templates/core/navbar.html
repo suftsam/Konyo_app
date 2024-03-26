@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{%static 'css/all.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        {% if page == 'home' %}
+        <div class="logo">
+            <h1>
+                KONYO
+            </h1>
+            <span>MUSEUM OF GHANAIAN ART</span>
+        </div>
+
+        {% else %}
+        <div class="logo2">
+            <h1>
+                KONYO
+            </h1>
+            <span>MUSEUM OF GHANAIAN ART</span>
+        </div>
+        {% endif %}
+        <ul class="menu">
+            <li class="item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="item"><a href="{% url 'exhibits' %}">Exhibitions</a></li>
+            <li class="item"><a href="{% url 'shop' %}">Shop</a></li>
+            <li class="item"><a href="{% url 'insight' %}">Insight</a></li>
+            <li class="item"><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <li class="item"><a href="tel: +1(404)694-7759">Contact</a></li>
+
+            <li><a href="#" onclick="toggleCart()" class="cart">Cart</a></li>
+
+            <li><a href="#" onclick="toggleMenu()" class="menu-opener">
+                <i class="fa fa-bars"></i></a>
+            </li>
+        </ul>
+        
+    </nav>
+
+    <div class="menuContainer">
+        <div class="menu-header">
+            <h4>Navigation menu</h4>
+            <a href="#" onclick="closeMenu()" class="close-btn cart">X</a>
+        </div>
+        <div class="menu-body">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'exhibits' %}">Exhibitions</a></li>
+            <li><a href="{% url 'shop' %}">Shop</a></li>
+            <li><a href="{% url 'insight' %}">Insight</a></li>
+            <li><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <li><a href="tel: +1(404)694-7759">Contact</a></li>
+            <!-- <li><a href="#" onclick="toggleCart()" class="cart">Cart</a></li> -->
+            </ul>   
+        </div>
+    </div>
+
+    <div class="cartContainer">
+        <div class="cart-header">
+            <h4>My Cart</h4>
+            <button onclick="closeCart()" class="close-btn cart">X</button>
+        </div>
+        <div class="cart-body">
+
+            <div class="cartItems-container">
+                <div id="cartItems">
+                    <div class="image-container">
+                            <img src="#" alt="" class="product-image">
+                    </div>
+                    <!-- <div class="details">
+                        <div class="tittle"><span>Title:</span></div>
+                        <div class="price"><span>Price:</span></div>
+                        <a href="#" class="button remove">remove</a>
+        
+                    </div> -->
+                </div>
+            </div>
+
+            
+            <div class="cart-description">
+                <span>Items in Cart</span>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="{%static 'script/cart.js'%}"></script>
+    <script src="{% static 'script/toggle.js' %}"></script>
+    <script src="{% static 'script/all.js' %}"></script>
+</body>
+</html>

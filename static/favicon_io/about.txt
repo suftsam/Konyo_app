@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Glegoo
+- Font Author: Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar), Copyright 2011-13 Lohit Fonts Project contributors (http://fedorahosted.org/lohit)
+- Font Source: http://fonts.gstatic.com/s/glegoo/v16/_Xmt-HQyrTKWaw2Ji6mZAI91xw.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

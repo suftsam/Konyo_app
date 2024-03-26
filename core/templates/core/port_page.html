@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/port_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <title>Portfolios</title>
+</head>
+<body>
+
+
+    {% include 'core/navbar.html' %}
+
+    <main>
+
+        <section>
+            {% for user_info in user_data %}
+                <div class="portfolio">
+                    <div class="images-wrapper" uk-lightbox>
+                        {% for post in user_info.user_posts %}
+                            <a href="{{ post.artwork.url }}">
+                                <img src="{{ post.artwork.url }}" alt="">
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="details">
+                        <h2 class="title user">{{ user_info.user_profile.firstname }} {{ user_info.user_profile.lastname }} {{ user_info.user_profile.middle_name }}</h2>
+                        <a href="{% url 'user_posts' user_id=user_info.user_profile.user.id %}" class="button">View portfolio</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+       
+    </main>
+
+    {% include 'core/footer.html' %}
+
+    <script src="{% static 'script/uikit.js' %}"></script>
+</body>
+</html>

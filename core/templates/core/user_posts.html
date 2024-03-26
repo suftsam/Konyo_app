@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <title>{{ user_profile.firstname }} {{ user_profile.lastname }}'s works</title>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+   
+
+    <main>
+        <form method="GET" action="{% url 'user_posts' user_id=user_profile.user.id %}">
+            <input type="search" name="q" placeholder="Search artworks" value="{{ query }}">
+        </form>
+        
+        {% if query %}
+            <h2>Search Results for "{{ query }}"</h2>
+            <a href="{% url 'user_posts' user_id=user_profile.user.id %}">Back to All Artworks</a>
+        {% endif %}
+        <section>
+            {% for post in user_posts %}
+            <div class="product-wrapper">
+                <div class="image-container" uk-lightbox>
+                    <a href="{{ post.artwork.url }}">
+                        <img src="{{ post.artwork.url }}" alt="{{ post.title }}" class="product-image">
+                    </a>
+                </div>
+                <div class="details">
+                    <div class="tittle"><span>Title:</span> {{ post.title }}</div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    {% include 'core/footer.html' %}
+
+    
+    <script src="{% static 'script/uikit.js' %}"></script>
+</body>
+</html>

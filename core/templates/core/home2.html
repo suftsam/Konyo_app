@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/try.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>
+                KONYO
+            </h1>
+            <span>MUSEUM OF GHANA ARTS</span>
+        </div>
+        <ul class="menu">
+            <li class="item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="item"><a href="{% url 'exhibits' %}">Exhibitions</a></li>
+            <li class="item"><a href="{% url 'shop' %}">Shop</a></li>
+            <li class="item"><a href="{% url 'insight' %}">Insight</a></li>
+            <li class="item"><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <li class="item"><a href="tel: +1(404)694-7759">Contact</a></li>
+            <li class="item"><a href="#" onclick="toggleCart()" class="cart">Cart</a></li>
+        </ul>
+        <a href="#" onclick="toggleCart()" class="menu-opener">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="menuContainer">
+        <div class="menu-header">
+            <h4>Navigation menu</h4>
+            <a href="#" onclick="closeCart()" class="close-btn cart">X</a>
+        </div>
+        <div class="menu-body">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'exhibits' %}">Exhibitions</a></li>
+            <li><a href="{% url 'shop' %}">Shop</a></li>
+            <li><a href="{% url 'insight' %}">Insight</a></li>
+            <li><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <li><a href="tel: +1(404)694-7759">Contact</a></li>
+            <li><a href="#" onclick="toggleCart()" class="cart">Cart</a></li>
+            </ul>   
+        </div>
+    </div>
+
+    <div id="banner">
+        <!-- <img src="{% static 'images/museum.jpeg' %}" alt=""> -->
+    </div>
+
+    <script src="{% static 'script/toggle.js' %}"></script>
+</body>
+</html>

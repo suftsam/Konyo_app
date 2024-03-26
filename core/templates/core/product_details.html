@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{ static 'favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png'% }">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io//favicon-16x16.png'% }">
+    <link rel="manifest" href="{ url 'site.webmanifest' %}">
+    {% if page == "exhibit" %}
+    <title>exhibit details</title>
+    {% endif %}
+    <title>Store</title>
+</head>
+<body>
+  {% include 'core/navbar.html' %}
+
+    <main>
+
+         
+        {% if page == "exhibit" %}
+        <div class="product-wrapper">
+            <div class="image-container" uk-lightbox>
+                <a href="{{ exhibit.image.url }}">
+                    <img src="{{ exhibit.image.url }}" alt="" class="exhibit-image">
+                </a>
+            </div>
+            <div class="details">
+                <div class="tittle"><span>Title:</span> {{ exhibit.title }}</div>
+                <div class="tittle"><span>Artist:</span> {{ exhibit.artist }}</div>
+                <div class="tittle"><span>medium:</span> {{ exhibit.medium }}</div>
+                <div class="tittle"><span>size:</span> {{ exhibit.size }}</div>
+                <div class="price"><span>Price:</span> ${{exhibit.price}}</div>
+                <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+            </div>
+        </div>
+        {% else %}
+
+        
+
+       <div class="product-wrapper">
+        <div class="image-container" uk-lightbox>
+            <a href="{{ product.product_image.url }}">
+                <img src="{{ product.product_image.url }}" alt="" class="product-image">
+            </a>
+        </div>
+        <div class="details">
+            <div class="tittle"><span>Title:</span> {{ product.title }}</div>
+            <div class="tittle"><span>Artist:</span> {{ product.artist }}</div>
+            <div class="tittle"><span>medium:</span> {{ product.medium }}</div>
+            <div class="tittle"><span>size:</span> {{ product.size }}</div>
+            <div class="price"><span>Price:</span> ${{product.price}}</div>
+            <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+        </div>
+        {% endif %}
+       </div>
+    </main>
+
+    {% include 'core/footer.html' %}
+    
+    <script src="{% static 'script/uikit.js' %}"></script>
+</body>
+</html>

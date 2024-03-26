@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Home</title>
+</head>
+<body>
+
+
+    {% include 'core/navbar.html' %}
+
+    <main>
+
+       
+
+    
+
+        <div class="banner">
+
+          <div id="banner">            
+          <img src="{% static 'images/museum.jpeg' %}" alt="">
+          </div>
+          
+          <div class="info-wrapper">
+
+            <div class="info-item">
+                <div class="item-image">
+                    <img src="{% static 'images/gateway.jpeg' %}" alt="">
+                </div>
+                <h2>Your Gateway to Contemporary Art</h2>
+                <div class="link-wrap"><a href="#">read here</a></div>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image"><img src="{% static 'images/second.jpg' %}" alt=""></div>
+                <h2>Exploring the Essence of African Art</h2>
+                <div class="link-wrap"><a href="#">read here</a></div>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image"><img src="{% static 'images/journey.jpeg' %}" alt=""></div>
+                <h2>Connecting Continents: Konyo Gallery's Journey</h2>
+                <div class="link-wrap"><a href="#">read here</a></div>
+            </div>
+          </div>
+        </div>
+
+        <section>
+
+            {% for user_info in user_data %}
+            <div class="portfolio">
+              {% for post in user_info.user_posts %}
+              <div class="img-wrapper">
+                  <img src="{{ post.artwork.url }}" alt="">
+              </div>
+
+              <div class="title">
+                  <h2>{{ user_info.user_profile.firstname }} {{ user_info.user_profile.lastname }} {{ user_info.user_profile.middle_name }}</h2>
+                  <a href="{% url 'user_posts' user_id=user_info.user_profile.user.id %}" class="button">
+                    <i class="fa fa-eye"></i>
+                  </a>
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+        </section>
+
+       <div class="advisory">
+            <div class="head-wrap">
+                <h3>Free Art Advisory Services</h3>
+            </div>
+            
+            <div class="image-wrap" uk-lightbox>
+                <img src="{% static 'images/third.jpg' %}" alt="">
+                <div class="text-wrap">
+                    <p>
+                        Our expert curators are here to help you find the perfect artwork that speaks to your heart and complements your space.
+                        <br><br>
+                        Whether you're a seasoned collector or new to the art world, let us guide you on a personalized art discovery journey today!
+                    </p><br>
+                    <a href="#" class="button">Learn more</a>
+                </div>
+            </div>
+
+            
+            
+        </div>
+        
+       
+    </main>
+
+
+    <!-- <div id="splash">
+        <img src="{% static 'images/back.jpeg' %}">
+    </div> -->
+
+    {% include 'core/footer.html' %}
+
+    
+  <script src="{% static 'script/splash.js' %}"></script>
+
+  <script>
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slides = document.querySelector('.slides');
+    const slideWidth = document.querySelector('.slide').clientWidth;
+  
+    let counter = 0;
+  
+    nextButton.addEventListener('click', () => {
+      if (counter < slides.children.length - 1) {
+        counter++;
+      } else {
+        counter = 0;
+      }
+      slides.style.transform = `translateX(-${slideWidth * counter}px)`;
+    });
+  
+    prevButton.addEventListener('click', () => {
+      if (counter > 0) {
+        counter--;
+      } else {
+        counter = slides.children.length - 1;
+      }
+      slides.style.transform = `translateX(-${slideWidth * counter}px)`;
+    });
+  </script>
+</body>
+</html>
