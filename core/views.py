@@ -112,3 +112,7 @@ def exhibit_detail(request, exhibit_id):
         'exhibit': exhibit
     }
     return render(request, 'core/product_details.html', context)
+
+
+def org_info(request):
+    return render(request, 'core/org_info.html')

@@ -5,6 +5,7 @@ from .import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('shop/', views.shop, name='shop'),
+    path('org_info/', views.org_info, name='org_info'),
     path('product_detail/<uuid:product_id>/', views.product_detail, name='product_detail'),
     path('portfolio_page/', views.portfolio_page, name='portfolio_page'),
     path('user_posts/<int:user_id>/', views.user_posts_view, name='user_posts'),
