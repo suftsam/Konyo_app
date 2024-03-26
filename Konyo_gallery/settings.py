@@ -15,7 +15,8 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'konyomuseum.onrender.com', 'https://konyomuseum.onrender.com']
+
 
 
 # Application definition
@@ -42,10 +43,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://zeehub.onrender.com",
+    "https://konyomuseum.onrender.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://zeehub.onrender.com",
+    "https://konyomuseum.onrender.com",
 ]
 
 
