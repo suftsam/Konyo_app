@@ -45,3 +45,9 @@ class Exhibit(models.Model):
     medium = models.CharField(max_length=100, blank=True)
     size = models.CharField(max_length=100, blank=True)
     price = models.CharField(max_length=100, blank=True)
+
+
+class Org(models.Model):
+    cover = models.ImageField(upload_to='org_cover', blank=True, null=True)
+    title = models.CharField(max_length=100, blank=False)
+    tex = models.TextField(blank=False)

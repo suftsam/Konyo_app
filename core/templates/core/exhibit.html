@@ -24,7 +24,7 @@
         {% endif %}
 
         <section>
-            {% for exhibit in exhibits %}
+            {% for exhibit in exhibits reversed %}
             <div class="product-wrapper">
                 <div class="image-container" uk-lightbox>
                     <a href="{{ exhibit.image.url }}">
@@ -32,8 +32,8 @@
                     </a>
                 </div>
                 <div class="details">
-                    <div class="tittle"><span>Title:</span> {{ product.title }}</div>
-                    <div class="price"><span>Price:</span> ${{ product.price }}</div>
+                    <div class="tittle"><span>Title:</span> {{ exhibit.title }}</div>
+                    <div class="price"><span>Price:</span> ${{ exhibit.price }}</div>
                     <a href="{% url 'exhibit_detail' exhibit_id=exhibit.id %}" class="details-page">more details</a>
                     
                     

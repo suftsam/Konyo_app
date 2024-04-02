@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, UserProfile, Post, Exhibit
+from .models import Product, UserProfile, Post, Exhibit, Org
 from django.contrib.auth.models import User
 
 
@@ -17,9 +17,12 @@ def home(request):
             'user_posts': user_posts,
         })
 
+    orgs = Org.objects.all()
+
     context = {
         'page': page,
         'user_data': user_data,
+        'orgs': orgs
     }
     return render(request, 'core/home.html', context)
 
@@ -114,5 +117,6 @@ def exhibit_detail(request, exhibit_id):
     return render(request, 'core/product_details.html', context)
 
 
-def org_info(request):
-    return render(request, 'core/org_info.html')
+def org_info_detail(request, pk):
+    org_info = get_object_or_404(Org, pk=pk)
+    return render(request, 'core/org_info.html', {'org_info': org_info})
