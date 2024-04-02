@@ -103,12 +103,14 @@ main section{
     align-items: center;
     letter-spacing: 1.3px;
 }
-.title h2{
+.title h4{
     width: fit-content;
     background: #00000085;
     color: gold;
     border-radius: 5px;
     padding: 3px;
+    /* font-size: 18px;
+    font-weight: 400px; */
 }
 
 .button{

@@ -10,7 +10,6 @@ footer{
 }
 
 
-
 /* Chat styling start */
 .chat-toggle{
     background: gold;
@@ -102,3 +101,11 @@ form div{
     margin-bottom: 10px;
 }
 /* Chat styling end */
+
+
+@media (max-width: 786px){
+
+    footer small{
+        font-size: 11px;
+    }
+}

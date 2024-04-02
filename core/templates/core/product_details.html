@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{ static 'favicon_io/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png'% }">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io//favicon-16x16.png'% }">
@@ -34,7 +35,8 @@
                 <div class="tittle"><span>medium:</span> {{ exhibit.medium }}</div>
                 <div class="tittle"><span>size:</span> {{ exhibit.size }}</div>
                 <div class="price"><span>Price:</span> ${{exhibit.price}}</div>
-                <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+                <a href="{{ exhibit.image.url }}" download="" class="cart-button"><i class="fa fa-down-long"></i></a>
+                <!-- <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a> -->
             </div>
         </div>
         {% else %}
@@ -53,7 +55,8 @@
             <div class="tittle"><span>medium:</span> {{ product.medium }}</div>
             <div class="tittle"><span>size:</span> {{ product.size }}</div>
             <div class="price"><span>Price:</span> ${{product.price}}</div>
-            <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+            <a href="{{ product.product_image.url }}" download="" class="cart-button"><i class="fa fa-down-long"></i></a>
+            <!-- <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a> -->
         </div>
         {% endif %}
        </div>
@@ -62,5 +65,6 @@
     {% include 'core/footer.html' %}
     
     <script src="{% static 'script/uikit.js' %}"></script>
+    <script src="{% static 'script/all.js' %}"></script>
 </body>
 </html>

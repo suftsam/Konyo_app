@@ -58,7 +58,7 @@
               </div>
 
               <div class="title">
-                  <h2>{{ user_info.user_profile.firstname }} {{ user_info.user_profile.lastname }} {{ user_info.user_profile.middle_name }}</h2>
+                  <h4>{{ user_info.user_profile.firstname }} {{ user_info.user_profile.lastname }} {{ user_info.user_profile.middle_name }}</h4>
                   <a href="{% url 'user_posts' user_id=user_info.user_profile.user.id %}" class="button">
                     <i class="fa fa-eye"></i>
                   </a>
@@ -102,7 +102,7 @@
     
   <script src="{% static 'script/splash.js' %}"></script>
 
-  <script>
+  <!-- <script>
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     const slides = document.querySelector('.slides');
@@ -127,6 +127,6 @@
       }
       slides.style.transform = `translateX(-${slideWidth * counter}px)`;
     });
-  </script>
+  </script> -->
 </body>
 </html>
