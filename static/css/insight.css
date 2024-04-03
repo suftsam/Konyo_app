@@ -26,7 +26,9 @@ main{
     /* overflow-y: scroll; */
 }
 
-main h1{
+main .head{
+    font-size: 20px;
+    letter-spacing: 1.3px;
     color: white;
 }
 
@@ -49,6 +51,7 @@ section{
 .image-wrapper img{
     width: 100%;
     height: auto;
+    aspect-ratio: 16/9;
     border-radius: 4px;
 }
 

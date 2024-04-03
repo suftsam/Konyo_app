@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, UserProfile, Post, Exhibit, Org
+from .models import Product, UserProfile, Post, Exhibit, Org, Insight
 from django.contrib.auth.models import User
 
 
@@ -119,4 +119,27 @@ def exhibit_detail(request, exhibit_id):
 
 def org_info_detail(request, pk):
     org_info = get_object_or_404(Org, pk=pk)
-    return render(request, 'core/org_info.html', {'org_info': org_info})
+    paragraphs = org_info.text.split('\n')
+    context = {
+        'org_info': org_info,
+        'paragraphs': paragraphs
+    }
+    return render(request, 'core/org_info.html', context)
+
+
+def insight_view(request):
+    insights = Insight.objects.all()
+
+    context = {
+        'insights': insights
+    }
+
+    # content = Insight.objects.all()
+    # paragraphs = []
+    # for item in content:
+    #     paragraphs.extend(item.text.split('\n'))
+    # context = {
+    #     'content': content,
+    #     'paragraphs': paragraphs
+    # }
+    return render(request, 'core/reel.html', context)

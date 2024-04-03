@@ -94,31 +94,6 @@
     
   <script src="{% static 'script/splash.js' %}"></script>
 
-  <!-- <script>
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const slides = document.querySelector('.slides');
-    const slideWidth = document.querySelector('.slide').clientWidth;
   
-    let counter = 0;
-  
-    nextButton.addEventListener('click', () => {
-      if (counter < slides.children.length - 1) {
-        counter++;
-      } else {
-        counter = 0;
-      }
-      slides.style.transform = `translateX(-${slideWidth * counter}px)`;
-    });
-  
-    prevButton.addEventListener('click', () => {
-      if (counter > 0) {
-        counter--;
-      } else {
-        counter = slides.children.length - 1;
-      }
-      slides.style.transform = `translateX(-${slideWidth * counter}px)`;
-    });
-  </script> -->
 </body>
 </html>

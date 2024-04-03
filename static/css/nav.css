@@ -7,14 +7,14 @@
 nav{
     display: flex;
     justify-content: space-between;
-    background: brown;
+    background: #781919;
     color: white;
     width: 100%;
     height: 6svh;
 }
 
 .logo{
-    background: brown;
+    background: #781919;
     color: yellow;
     transform: translateY(3svh);
     height: fit-content;
@@ -23,7 +23,7 @@ nav{
     /* font-size: 18px; */
 }
 .logo2{
-    background: brown;
+    background: #781919;
     color: yellow;
 }
 
@@ -146,7 +146,7 @@ nav{
 @media (max-width: 1200px) {
 
     .logo{
-        background: brown;
+        background: #781919;
         color: yellow;
         transform: translateY(0vh);
         height: fit-content;
@@ -176,7 +176,7 @@ nav{
         z-index: 99;
         height: 94svh;
         width: 100%;
-        background: brown;
+        background: #781919;
         color: white;
     }
 

@@ -12,21 +12,20 @@
     {% include 'core/navbar.html' %}
 
     <main>
-        <h1>TITLE</h1>
+        <h1 class="head">{{org_info.title}}</h1>
         <section>
             <div class="image-wrapper" uk-lightbox>
-                <a href="{% static 'images/museum.jpeg' %}"><img src="{% static 'images/museum.jpeg' %}" alt=""></a>
+                <a href="{{org_info.cover.url}}">
+                    <img src="{{org_info.cover.url}}" alt="" class="cover">
+                </a>
             </div>
 
             <div class="text-wrapper">
-                <h3>
-                    head
-                </h3>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In cumque, qui sed ducimus fugit, error aut nisi, maxime labore officiis natus et eveniet quia alias! Laudantium eaque quam pariatur ratione. Mollitia porro libero quia sed fugit esse hic itaque, cupiditate quas velit vel voluptatem debitis doloribus explicabo laboriosam accusamus. Qui amet ullam quae. Non dolor perspiciatis natus debitis nesciunt dolorem cum vel ex ipsa odio voluptate mollitia maxime error libero consequatur consequuntur distinctio a, ipsam quasi aliquid facilis. Repellendus eos, rem harum architecto fugit exercitationem deleniti libero est quidem veniam perspiciatis sunt ipsum ullam inventore accusantium necessitatibus soluta officiis distinctio.
-                </p>
+                <h3>{{org_info.title}}</h3>
                 <div class="paragraphs">
-
+                    {% for paragraph in paragraphs %}
+                    <p>{{ paragraph }}</p>
+                    {% endfor %}
                 </div>
             </div>
 

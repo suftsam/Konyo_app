@@ -24,12 +24,14 @@
         {% endif %}
 
         <section>
-            {% for product in products %}
+            {% for product in products reversed %}
             <div class="product-wrapper">
                 <div class="image-container" uk-lightbox>
+                    {% if product.product_image %}
                     <a href="{{ product.product_image.url }}">
                         <img src="{{ product.product_image.url }}" alt="" class="product-image">
                     </a>
+                    {% endif %}
                 </div>
                 <div class="details">
                     <div class="tittle"><span>Title:</span> {{ product.title }}</div>

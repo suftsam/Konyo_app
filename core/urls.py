@@ -12,4 +12,5 @@ urlpatterns = [
     path('exhibits/', views.exhibits, name='exhibits'),
     path('exhibit_detail/<uuid:exhibit_id>/', views.exhibit_detail, name='exhibit_detail'),
     path('org_info_detail/<int:pk>/', views.org_info_detail, name='org_info_detail'),
+    path('insight/', views.insight_view, name='insight')
 ]

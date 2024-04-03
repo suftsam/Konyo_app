@@ -7,7 +7,8 @@ ARTIST_CHOICES = [
     ('oladapo', 'oladapo'),
     ('kwadwo', 'kwadwo'),
     ('massimo', 'massimo'),
-    ('patrick', 'patrick')
+    ('patrick', 'patrick'),
+    ('konyo', 'konyo')
 
 ]
 
@@ -50,4 +51,10 @@ class Exhibit(models.Model):
 class Org(models.Model):
     cover = models.ImageField(upload_to='org_cover', blank=True, null=True)
     title = models.CharField(max_length=100, blank=False)
-    tex = models.TextField(blank=False)
+    text = models.TextField(blank=False)
+
+
+class Insight(models.Model):
+    title = models.CharField(max_length=200, blank=True)
+    cover = models.ImageField(upload_to='insight_cover', blank=True)
+    text = models.TextField(blank=True)
