@@ -46,9 +46,19 @@
             <span>KONYO MUSEUM OF GHANAIAN ART</span>
         </div>
 
+
+        {% elif page == 'portfolio-list' %}
+        <div class="logo2">
+            <h4>
+                VIEW ARTIST PORTFOLIO
+            </h4>
+            <span>KONYO MUSEUM OF GHANAIAN ART</span>
+        </div>
+
         {% endif %}
 
         <ul class="menu">
+
             <li class="item"><a href="{% url 'home' %}">Home</a></li>
             <li class="item"><a href="{% url 'exhibits' %}">Exhibitions</a></li>
             <li class="item"><a href="{% url 'shop' %}">Shop</a></li>
@@ -62,6 +72,16 @@
             <li><a href="#" onclick="toggleMenu()" class="menu-opener">
                 <i class="fa fa-bars"></i></a>
             </li>
+
+            {% if page == 'home' %}
+
+            {% else %}
+            <li>
+                <a href="javascript:history.back()" id="back">
+                    <i class="fa fa-arrow-left-long"></i>
+                </a>
+            </li>
+            {% endif %}
         </ul>
         
     </nav>

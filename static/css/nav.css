@@ -49,6 +49,12 @@ nav{
     text-decoration: none;
     color: white;
 }
+#back{
+    color: orange;
+    padding: 2px;
+    border-radius: 3px;
+    background: #00000057;
+}
 
 /* Cart styling start */
 .cart{

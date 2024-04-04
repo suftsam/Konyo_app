@@ -58,6 +58,7 @@ def insight(request):
 
 
 def portfolio_page(request):
+    page = "portfolio-list"
     # Fetch the first four images for each user
     users_with_images = User.objects.filter(posts__isnull=False).distinct()
 
@@ -71,6 +72,7 @@ def portfolio_page(request):
         })
 
     context = {
+        'page': page,
         'user_data': user_data,
     }
     return render(request, 'core/port_page.html', context)
