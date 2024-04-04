@@ -7,20 +7,23 @@ footer{
     height: 6svh;
     background: #781919;
     color: gold;
+    overflow: hidden;
 }
 
+footer a{
+    text-decoration: none;
+    color: orange;
+    /* background: white; */
+    padding: 0;
+}
 
-/* Chat styling start */
-.chat-toggle{
-    background: gold;
-    color: brown;
-    border-radius: 5px;
-    padding: 1px;
-    transition: .3s linear;
+footer a .icon{
+    height: 50px;
+    width: auto;
+    aspect-ratio: 16/9;
+    /* width: 30px; */
 }
-.chat-toggle:hover{
-    box-shadow: 0 0 3px 1px black;
-}
+
 
 #chatContainer {
     display: none;

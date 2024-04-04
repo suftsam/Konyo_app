@@ -9,10 +9,18 @@
 </head>
 <body>
     <footer>
-        <!-- Crystal Lake, Illinois, -->
-        <small>Konyo museum, 1578 glacier circle, crystal lake &COPY; 2024 </small>
 
-        <button onclick="toggleChat()" class="chat-toggle">Email</button>
+        <a href="https://www.facebook.com/profile.php?id=61557965824898&mibextid=ZbWKwL">
+            <img class="icon" src="{% static 'images/facebook.png' %}" alt="">
+        </a>        
+
+        <a href="#">
+            <img class="icon" src="{% static 'images/instagram.png' %}" alt="">
+        </a>        
+
+        <a href="#" onclick="toggleChat()">
+            <img class="icon" src="{% static 'images/gmail.png' %}" alt="">
+        </a>
 
         <fieldset id="chatContainer">
             <div class="chat-header">
@@ -23,7 +31,7 @@
               <button onclick="closeChat()" class="close-btn">X</button>
             </div>
 
-            <form action="konyomuseumghart@gmail.com" method="POST">
+            <form action="https://formsubmit.co/konyomuseumghart@gmail.com" method="POST">
                 {% csrf_token %}
                 <input type="text" name="first_name" placeholder="First name" required>
                 <input type="text" name="last_name" placeholder="Last name" required>
@@ -33,13 +41,6 @@
                     <button onclick="sendMessage()" id="send">Send</button>
                 </div>
             </form>
-
-
-            <!-- <div id="chatBody" class="chat-body"></div>
-            <div class="chat-footer">
-              <input type="text" id="messageInput" placeholder="Type your message..."/>
-              <button onclick="sendMessage()" id="send">Send</button>
-            </div> -->
         </fieldset>
     </footer>
 
