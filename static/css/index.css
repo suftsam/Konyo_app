@@ -36,6 +36,11 @@ main{
     text-align: center;
     color: white;
 }
+#banner img{
+    width: 60%;
+    height: auto;
+}
+
 .info-wrapper{
     width: 100%;
     display: grid;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'css/shop.css' %}">
-    <title>Store</title>
+    <title>Shop</title>
 </head>
 <body>
   {% include 'core/navbar.html' %}
@@ -38,7 +38,6 @@
                     <div class="price"><span>Price:</span> ${{ product.price }}</div>
                     <a href="{% url 'product_detail' product_id=product.id %}" class="details-page">more details</a>
                     
-                    <!-- Modify your existing "Add to cart" button in the product loop -->
                     <!-- <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a> -->
                 </div>
             </div>
@@ -56,7 +55,6 @@
                     <div class="tittle"><span>Title:</span> {{ product.title }}</div>
                     <div class="price"><span>Price:</span> ${{ product.price }}</div>
                     
-                    <!-- Modify your existing "Add to cart" button in the product loop -->
                     <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
                 </div>
             </div>

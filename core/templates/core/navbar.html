@@ -13,26 +13,48 @@
     <nav>
         {% if page == 'home' %}
         <div class="logo">
-            <h1>
-                KONYO
-            </h1>
+            <h4>
+                WELCOME TO KONYO
+            </h4>
             <span>MUSEUM OF GHANAIAN ART</span>
         </div>
 
-        {% else %}
+        {% elif page == 'exhibition' %}
+
         <div class="logo2">
-            <h1>
-                KONYO
-            </h1>
-            <span>MUSEUM OF GHANAIAN ART</span>
+            <h4>
+                CURRENT
+            </h4>
+            <span>EXHIBITION</span>
         </div>
+
+        
+        {% elif page == 'about' %}
+        <div class="logo2">
+            <h4>
+                ABOUT
+            </h4>
+            <span>KONYO MUSEUM OF GHANAIAN ART</span>
+        </div>
+
+
+        {% elif page == 'shop' %}
+        <div class="logo2">
+            <h4>
+                SHOP WITH US
+            </h4>
+            <span>KONYO MUSEUM OF GHANAIAN ART</span>
+        </div>
+
         {% endif %}
+
         <ul class="menu">
             <li class="item"><a href="{% url 'home' %}">Home</a></li>
             <li class="item"><a href="{% url 'exhibits' %}">Exhibitions</a></li>
             <li class="item"><a href="{% url 'shop' %}">Shop</a></li>
-            <li class="item"><a href="{% url 'insight' %}">Insight</a></li>
-            <li class="item"><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <!-- <li class="item"><a href="{% url 'insight' %}">Insight</a></li> -->
+            <!-- <li class="item"><a href="{% url 'portfolio_page' %}">Portfolio</a></li>                    -->
+            <li class="item"><a href="{% url 'about' %}">About</a></li>
             <li class="item"><a href="tel: +1(404)694-7759">Contact</a></li>
 
             <!-- <li><a href="#" onclick="toggleCart()" class="cart">Cart</a></li> -->
@@ -54,8 +76,9 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'exhibits' %}">Exhibitions</a></li>
             <li><a href="{% url 'shop' %}">Shop</a></li>
-            <li><a href="{% url 'insight' %}">Insight</a></li>
+            <!-- <li><a href="{% url 'insight' %}">Insight</a></li> -->
             <li><a href="{% url 'portfolio_page' %}">Portfolio</a></li>
+            <li class="item"><a href="{% url 'about' %}">About</a></li>
             <li><a href="tel: +1(404)694-7759">Contact</a></li>
             <!-- <li><a href="#" onclick="toggleCart()" class="cart">Cart</a></li> -->
             </ul>   

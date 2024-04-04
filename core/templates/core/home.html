@@ -21,7 +21,7 @@
         <div class="banner">
 
           <div id="banner">            
-          <img src="{% static 'images/museum.jpeg' %}" alt="">
+          <img src="{% static 'images/m-logo.png' %}" alt="">
           </div>
           
           <div class="info-wrapper">
@@ -31,8 +31,8 @@
                 <div class="item-image">
                     <img src="{{org.cover.url}}" alt="">
                 </div>
-                <h2>{{org.title}}</h2>
-                <div class="link-wrap"><a href="{% url 'org_info_detail' pk=org.id%}">read here</a></div>
+                <!-- <h2>{{org.title}}</h2> -->
+                <!-- <div class="link-wrap"><a href="{% url 'org_info_detail' pk=org.id%}">read here</a></div> -->
             </div>
 
             {% endfor %}
@@ -60,7 +60,7 @@
             {% endfor %}
         </section>
 
-       <div class="advisory">
+       <!-- <div class="advisory">
             <div class="head-wrap">
                 <h3>Free Art Advisory Services</h3>
             </div>
@@ -79,7 +79,7 @@
 
             
             
-        </div>
+        </div> -->
         
        
     </main>

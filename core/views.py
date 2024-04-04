@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render, get_object_or_404
 from .models import Product, UserProfile, Post, Exhibit, Org, Insight
 from django.contrib.auth.models import User
@@ -28,14 +29,17 @@ def home(request):
 
 
 def shop(request):
+    page = "shop"
     query = request.GET.get('q', '')  # Get the search query from the request
-    products = Product.objects.all()
+    products = list(Product.objects.all())
+    # random.shuffle(products)
 
     if query:
         # Filter products based on the search query
         products = products.filter(title__icontains=query)
 
     context = {
+        'page': page,
         'products': products,
         'query': query,
     }
@@ -93,14 +97,18 @@ def user_posts_view(request, user_id):
 
 
 def exhibits(request):
+    page = "exhibition"
+
     query = request.GET.get('q', '')  # Get the search query from the request
-    exhibits = Exhibit.objects.all()
+    exhibits = list(Exhibit.objects.all())
+    random.shuffle(exhibits)
 
     if query:
         # Filter products based on the search query
         exhibits = exhibits.filter(title__icontains=query)
 
     context = {
+        'page': page,
         'exhibits': exhibits,
         'query': query,
     }
@@ -127,19 +135,9 @@ def org_info_detail(request, pk):
     return render(request, 'core/org_info.html', context)
 
 
-def insight_view(request):
-    insights = Insight.objects.all()
-
+def about_page(request):
+    page = "about"
     context = {
-        'insights': insights
+        'page': page,
     }
-
-    # content = Insight.objects.all()
-    # paragraphs = []
-    # for item in content:
-    #     paragraphs.extend(item.text.split('\n'))
-    # context = {
-    #     'content': content,
-    #     'paragraphs': paragraphs
-    # }
-    return render(request, 'core/reel.html', context)
+    return render(request, 'core/about.html', context)

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/insight.css' %}">
+    <title>about konyo museum</title>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+
+    <main>
+        <main>
+            <h1 class="head">Konyo Museum</h1>
+            <section>
+                <div class="image-wrapper" uk-lightbox>
+                    <a href="{% static 'images/m-logo.png' %}">
+                        <img src="{% static 'images/m-logo.png' %}" alt="" class="cover">
+                    </a>
+                </div>
+    
+                <div class="text-wrapper">
+                    An intimate museum and contemporary art gallery established in 2012   to collect, preserve,  display, promote  and encourage the collection of   contemporary Ghanaian art. It organizes changing exhibitions of works in its permanent collection.
+                    Konyo is located on a seven acre verdant property that has a stream running through it, 30 minutes from the   historic slave  castles in Cape Coast and Elmina. Free Range chickens, guinea fowls, ducks, turkeys and a cow, Liberty, run around it. 
+                    Konyo offers a retreat guest house away from the maddening crown and noise of the cities. 
+                    Konyo runs the annual Aview: Accra Visual Arts Week during the month of April in various venues scattered in the city of the national capital, Accra.
+
+
+                    <div class="info-section">
+                        <h3>
+                            Visit us
+                        </h3>
+                        <p>
+                            @Konyo Museum  <br>
+                             Aburansa, KEA <br>
+                            Central Region, Ghana, West Africa
+
+                        </p>
+
+                    </div>
+                    
+                </div>
+    
+            </section>
+
+            
+        </main>
+
+        <!-- <div class="collection">
+            <h2 class="collection-head">
+                Collection Highlights;
+            </h2>
+
+            <p>
+                Ani Kwadwo <br><br>
+                Almighty God <br><br>
+                Asiedu Kwaku <br><br>
+                Asomani Frank <br><br>
+                Cudjoe James <br><br>
+                *Essel Papa <br><br>
+                *Emmanuel Owusu Dartey <br><br>
+                *Hacajaka <br><br>
+                *Professor E.K Tetteh <br><br>
+                *Massimo Wanssi <br>
+                * Patrick Tagoe-Turkson* <br><br>
+                Tarot <br><br>
+                Vanderpuije Isaac
+
+            </p>
+    
+            
+        </div> -->
+       
+    </main>
+
+
+    {% include 'core/footer.html' %}
+</body>
+</html>

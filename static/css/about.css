@@ -1,0 +1,36 @@
+
+::-webkit-scrollbar{
+    width: 0;
+}
+main{
+    background-image: url(../images/back.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 88svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    color:aliceblue;
+}
+
+.head{
+    color: gold;
+    background: black;
+}
+
+p{
+    width: 40%;
+    margin: 0 auto;
+    background: rgb(59, 43, 43);
+}
+
+.collection{
+    padding-top: 20px;
+}
+
+.collection-head{
+    color: gold;
+}
