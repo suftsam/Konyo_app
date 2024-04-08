@@ -49,7 +49,11 @@ main{
 }
 .info-item{
     margin: 4px;
-    background: #80808039;
+    background: #514f4f;
+    letter-spacing: 1.5px;
+}
+.info-item .artist{
+    color: gold;
 }
 .info-item .link-wrap{
     width: 100%;
@@ -202,8 +206,10 @@ main section{
     
     }
 
-    .item-image{
-        display: none;
+    .item-image img{
+        width: 98%;
+        height: auto;
+        /* display: none; */
     }
 
 

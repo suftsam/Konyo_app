@@ -20,7 +20,7 @@ ALLOWED_HOSTS = [
     'konyomuseum.onrender.com',
     'https://konyomuseum.onrender.com',
     'https://konyomuseum.org',
-    'konyomuseum.org'
+    'konyomuseum.org',
 ]
 
 

@@ -25,22 +25,62 @@
           </div>
           
           <div class="info-wrapper">
-            {% for org in orgs %}
 
             <div class="info-item">
                 <div class="item-image">
+                    <img src="{% static 'images/efua.jpeg' %}" alt="">
+                </div>
+                <h2>Efua</h2>
+                <h4 class="artist">Hacajaka</h4>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image">
+                    <img src="{% static 'images/balcony.jpeg' %}" alt="">
+                </div>
+                <h2>On The Balcony</h2>
+                <h4 class="artist">Frank Asomani</h4>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image">
+                    <img src="{% static 'images/asaw.jpeg' %}" alt="">
+                </div>
+                <h2>Asaw</h2>
+                <h4 class="artist">Patrick Tagoe Turkson</h4>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image">
+                    <img src="{% static 'images/watch_me.jpeg' %}" alt="">
+                </div>
+                <h2>Wathch Me</h2>
+                <h4 class="artist">Nestor Hernandez</h4>
+            </div>
+
+            <div class="info-item">
+                <div class="item-image">
+                    <img src="{% static 'images/three_faces.jpeg' %}" alt="">
+                </div>
+                <h2>Three faces</h2>
+                <h4 class="artist">Frank Asomani</h4>
+            </div>
+
+            {% for org in orgs %}
+            <!-- <div class="info-item">
+                <div class="item-image">
                     <img src="{{org.cover.url}}" alt="">
                 </div>
-                <!-- <h2>{{org.title}}</h2> -->
-                <!-- <div class="link-wrap"><a href="{% url 'org_info_detail' pk=org.id%}">read here</a></div> -->
-            </div>
+                <h2>{{org.title}}</h2>
+                <div class="link-wrap"><a href="{% url 'org_info_detail' pk=org.id%}">read here</a></div>
+            </div> -->
 
             {% endfor %}
 
           </div>
         </div>
 
-        <section>
+        <!-- <section>
 
             {% for user_info in user_data %}
             <div class="portfolio">
@@ -58,7 +98,7 @@
               {% endfor %}
             </div>
             {% endfor %}
-        </section>
+        </section> -->
 
        <!-- <div class="advisory">
             <div class="head-wrap">
