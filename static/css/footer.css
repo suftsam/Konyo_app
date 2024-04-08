@@ -13,15 +13,12 @@ footer{
 footer a{
     text-decoration: none;
     color: orange;
-    /* background: white; */
     padding: 0;
 }
 
 footer a .icon{
-    height: 50px;
+    height: 80px;
     width: auto;
-    aspect-ratio: 16/9;
-    /* width: 30px; */
 }
 
 
@@ -102,13 +99,4 @@ form div{
 
 .message {
     margin-bottom: 10px;
-}
-/* Chat styling end */
-
-
-@media (max-width: 786px){
-
-    footer small{
-        font-size: 11px;
-    }
 }
