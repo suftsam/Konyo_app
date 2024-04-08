@@ -103,7 +103,7 @@ def exhibits(request):
 
     query = request.GET.get('q', '')  # Get the search query from the request
     exhibits = list(Exhibit.objects.all())
-    random.shuffle(exhibits)
+    # random.shuffle(exhibits)
 
     if query:
         # Filter products based on the search query
