@@ -48,8 +48,12 @@ def shop(request):
 
 
 def product_detail(request, product_id):
+    page = 'product_detail'
     product = get_object_or_404(Product, id=product_id)
-    context = {'product': product}
+    context = {
+        'page': page,
+        'product': product
+    }
     return render(request, 'core/product_details.html', context)
 
 

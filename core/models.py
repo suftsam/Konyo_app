@@ -1,17 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from .choices import ARTIST_CHOICES
 
-ARTIST_CHOICES = [
-    ('hacajaka', 'hacajaka'),
-    ('oladapo alao', 'oladapo alao'),
-    ('kwadwo ani', 'kwadwo ani'),
-    ('massimo wansi', 'massimo wansi'),
-    ('Nestor Hernandez', 'Nestor Hernandez'),
-    ('patrick tagoe-turkson', 'patrick tagoe-turkson'),
-    ('konyo', 'konyo')
-
-]
+# ARTIST_CHOICES = [
+#     ('hacajaka', 'hacajaka'),
+#     ('oladapo alao', 'oladapo alao'),
+#     ('kwadwo ani', 'kwadwo ani'),
+#     ('massimo wansi', 'massimo wansi'),
+#     ('Nestor Hernandez', 'Nestor Hernandez'),
+#     ('patrick tagoe-turkson', 'patrick tagoe-turkson'),
+#     ('konyo', 'konyo')
+#
+# ]
 
 
 class Product(models.Model):
