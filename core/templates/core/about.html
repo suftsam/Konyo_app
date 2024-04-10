@@ -12,37 +12,50 @@
     {% include 'core/navbar.html' %}
 
     <main>
-            <h1 class="head">Konyo Museum</h1>
-            <section>
-                <div class="image-wrapper" uk-lightbox>
-                    <a href="{% static 'images/m-logo.png' %}">
-                        <img src="{% static 'images/m-logo.png' %}" alt="" class="cover">
-                    </a>
-                </div>
-    
-                <div class="text-wrapper">
+        <h1 class="head">Konyo Museum</h1>
+
+        <section>
+            <div uk-lightbox class="cover">
+                <a href="{% static 'images/m-logo.png' %}">
+                    <img src="{% static 'images/m-logo.png' %}" alt="" class="cover-logo">
+                </a>
+            </div>
+            <div class="text-wrapper">
+                <p>
                     An intimate museum and contemporary art gallery established in 2012   to collect, preserve,  display, promote  and encourage the collection of   contemporary Ghanaian art. It organizes changing exhibitions of works in its permanent collection.
                     Konyo is located on a seven acre verdant property that has a stream running through it, 30 minutes from the   historic slave  castles in Cape Coast and Elmina. Free Range chickens, guinea fowls, ducks, turkeys and a cow, Liberty, run around it. 
                     Konyo offers a retreat guest house away from the maddening crown and noise of the cities. 
                     Konyo runs the annual Aview: Accra Visual Arts Week during the month of April in various venues scattered in the city of the national capital, Accra.
 
+                </p>
 
-                    <div class="info-section">
-                        <h3>
-                            Visit us
-                        </h3>
-                        <p>
-                            @Konyo Museum  <br>
-                             Aburansa, KEA <br>
-                            Central Region, Ghana, West Africa
+                <div class="info-section">
+                    <h3>
+                        Visit us @
+                    </h3>
+                    <p>
+                        Konyo Museum  <br>
+                        Aburansa, KEA <br>
+                        Central Region, Ghana, West Africa
 
-                        </p>
+                    </p>
 
-                    </div>
+                </div>
+
+            </div>
+
+        </section>
+            <!-- 
+            <section>
+    
+                <div class="text-wrapper">
+                    
+
+                    
                     
                 </div>
     
-            </section>
+            </section> -->
 
         <!-- <div class="collection">
             <h2 class="collection-head">
