@@ -84,3 +84,15 @@ section{
 .info-section p{
     width: 80%;
 }
+
+
+@media (max-width: 800px) {
+    body{
+        overflow: hidden;
+    }
+    section{
+        display: block;
+        overflow-y: scroll;
+    }    
+
+}
