@@ -8,6 +8,9 @@ footer{
     background: #781919;
     color: gold;
     overflow: hidden;
+
+    position: fixed;
+    z-index: 99;
 }
 
 footer a{
