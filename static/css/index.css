@@ -55,6 +55,12 @@ main{
 .info-item .artist{
     color: gold;
 }
+
+.info-item .artis,
+.info-item h4{
+    font-weight: 400;
+}
+
 .info-item .link-wrap{
     width: 100%;
     text-align: right;

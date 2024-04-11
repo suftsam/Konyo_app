@@ -66,6 +66,7 @@ footer a .icon{
         border-radius: 3px;
         margin: 4px;   
         background:  #a52a2aa1;
+        color: white;
         outline: none; 
     }
     textarea{
