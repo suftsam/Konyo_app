@@ -14,4 +14,5 @@ urlpatterns = [
     path('org_info_detail/<int:pk>/', views.org_info_detail, name='org_info_detail'),
     # path('insight/', views.insight_view, name='insight'),
     path('about/', views.about_page, name='about'),
+    path('thanks/', views.thanks_page, name='thanks'),
 ]

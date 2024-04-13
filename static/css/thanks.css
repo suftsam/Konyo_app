@@ -29,3 +29,7 @@ fieldset p{
     width: 100%;
     text-align: center;
 }
+
+.none{
+    opacity: 0;
+}

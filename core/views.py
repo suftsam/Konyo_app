@@ -147,3 +147,8 @@ def about_page(request):
         'page': page,
     }
     return render(request, 'core/about.html', context)
+
+
+def thanks_page(request):
+    page = 'thanks'
+    return render(request, 'core/thanks.html', {'page': page})
