@@ -22,7 +22,11 @@
             <img class="icon" src="{% static 'images/instagram.png' %}" alt="">
         </a>        
 
-        <a href="#" onclick="toggleChat()">
+        <a href="mailto:konyomuseumghart@gmail.com">
+            <img class="icon" src="{% static 'images/gmail.png' %}" alt="">
+        </a>
+
+        <!-- <a href="#" onclick="toggleChat()">
             <img class="icon" src="{% static 'images/gmail.png' %}" alt="">
         </a>
 
@@ -35,20 +39,18 @@
               <button onclick="closeChat()" class="close-btn">X</button>
             </div>
 
-            <form action="https://formsubmit.co/konyomuseumghart@gmail.com" method="POST">
+            <form action="{% url 'mail' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="first_name" placeholder="First name" required>
+                <input type="hidden" name="subject" value="Contact Form Submission">
+                <input type="text" name="first_name" placeholder="First_name" required>
                 <input type="text" name="last_name" placeholder="Last name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <textarea name="body" placeholder="Message" required></textarea>
                 <div>
-                    <button onclick="sendMessage()" id="send">Send</button>
+                    <button type="submit" id="send">Submit</button>
                 </div>
-
-                <!-- Thank you redirection page -->
-                <input type="hidden" name="_next" value="https://konyomuseum.org/thanks.html">
             </form>
-        </fieldset>
+        </fieldset> -->
     </footer>
 
     <script src="{% static 'script/chat.js' %}"></script>

@@ -15,4 +15,5 @@ urlpatterns = [
     # path('insight/', views.insight_view, name='insight'),
     path('about/', views.about_page, name='about'),
     path('thanks/', views.thanks_page, name='thanks'),
+    path('mail/', views.contact_view, name='mail'),
 ]

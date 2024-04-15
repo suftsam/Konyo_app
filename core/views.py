@@ -1,7 +1,11 @@
-import random
+# import random
 from django.shortcuts import render, get_object_or_404
 from .models import Product, UserProfile, Post, Exhibit, Org, Insight
 from django.contrib.auth.models import User
+
+
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 
 
 def home(request):
@@ -152,3 +156,23 @@ def about_page(request):
 def thanks_page(request):
     page = 'thanks'
     return render(request, 'core/thanks.html', {'page': page})
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        # Process the form submission
+        # Assuming the form has fields 'subject' and 'message'
+        subject = request.POST.get('subject', '')
+        message = request.POST.get('message', '')
+        from_email = request.POST.get('email')
+
+        # Send the email
+        send_mail(
+            subject,
+            message,
+            from_email, # Sender's email
+            ['samuelaffedi@gmail.com'],  # List of recipient email addresses
+            fail_silently=False,
+        )
+
+        return HttpResponseRedirect('thanks/')  # Redirect to thank you page
