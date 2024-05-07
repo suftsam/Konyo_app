@@ -3,6 +3,10 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, UserProfile, Post, Exhibit, Org, Insight
 from django.contrib.auth.models import User
 
+from django.http import FileResponse
+import os
+from django.conf import settings
+
 
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
@@ -176,3 +180,11 @@ def contact_view(request):
         )
 
         return HttpResponseRedirect('thanks/')  # Redirect to thank you page
+
+def download_pdf(request):
+    pdf_path = os.path.join(settings.MEDIA_ROOT, 'catalogue.pdf')
+    if os.path.exists(pdf_path):
+        return FileResponse(open(pdf_path, 'rb'), content_type='application/pdf')
+    else:
+        # Handle file not found scenario
+        return HttpResponse("File not found", status=404)

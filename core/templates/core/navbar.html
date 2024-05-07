@@ -104,8 +104,26 @@
             </li>
             {% endif %}
         </ul>
+
+
+        <a href="{% url 'download_pdf' %}" class="float" download>
+            <img src="{% static 'images/float.jpeg' %}" alt="">
+        </a>
+        <!-- <a href="#" class="float" onclick="toggleResume()">
+            <img src="{% static 'images/float.jpeg' %}" alt="">
+        </i></a> -->
         
     </nav>
+
+    <div class="resumeContainer">
+        <div class="resume-header">
+            <h4>MY RESUME</h4>
+            <a href="#" onclick="closeResume()" class="close-btn">X</a>
+        </div>
+        <div class="menu-body">
+            <embed src="#" type="application/pdf" type="application/pdf">            
+        </div>
+    </div>
 
     <div class="menuContainer">
         <div class="menu-header">

@@ -37,7 +37,6 @@
                     <a href="{% url 'exhibit_detail' exhibit_id=exhibit.id %}" class="details-page">more details</a>
                     
                     
-                    <!-- Modify your existing "Add to cart" button in the product loop -->
                     <!-- <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a> -->
                 </div>
             </div>
@@ -56,7 +55,7 @@
                     <div class="price"><span>Price:</span> ${{ product.price }}</div>
                     
                     <!-- Modify your existing "Add to cart" button in the product loop -->
-                    <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a>
+                    <!-- <a href="#" class="cart-button" data-title="{{ product.title }}" onclick="addToCart('{{ product.title }}', '{{ product.product_image.url }}', '{{ product.price }}')">Add to cart</a> -->
                 </div>
             </div>
             {% endfor %}

@@ -21,6 +21,28 @@ function toggleMenu() {
 }
 
 
+// Function to open the resume
+function openResume() {
+    var menuContainer = document.querySelector('.resumeContainer');
+    menuContainer.style.display = 'block';
+}
+
+// Function to close the resume
+function closeResume() {
+    var menuContainer = document.querySelector('.resumeContainer');
+    menuContainer.style.display = 'none';
+}
+
+// Function to toggle the resume (open/close)
+function toggleResume() {
+    var menuContainer = document.querySelector('.resumeContainer');
+    if (menuContainer.style.display === 'block') {
+        closeResume();
+    } else {
+        openResume();
+    }
+}
+
 
 
 // // Function to open the cart

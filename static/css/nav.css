@@ -156,6 +156,52 @@ nav{
 
 /* Cart styling end */
 
+
+.float{
+    position: fixed;
+    z-index: 99;
+    bottom: 10vh;
+    right: 10px;
+}
+
+.float img{
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid salmon;
+}
+
+.resumeContainer{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    height: 94svh;
+    background: brown;
+    color: white;
+}
+.resume-header{
+    text-align: center;
+    position: relative;
+    height: 4svh;
+}
+.resume-header .close-btn{
+    position: absolute;
+    right: 1px;
+    top: 0;
+    color: orange;
+    background: black;
+    padding: 2px;
+}
+embed{
+    height: 100vh;
+    width: 100%;
+    /* background: red; */
+}
+
+
 @media (max-width: 1200px) {
 
     .logo{
