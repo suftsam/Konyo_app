@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, UserProfile, Post, Exhibit, Org, Insight
 from django.contrib.auth.models import User
 
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponse
 import os
 from django.conf import settings
 
@@ -39,7 +39,7 @@ def home(request):
 def shop(request):
     page = "shop"
     query = request.GET.get('q', '')  # Get the search query from the request
-    products = list(Product.objects.all())
+    products = Product.objects.all()
     # random.shuffle(products)
 
     if query:
@@ -114,7 +114,7 @@ def exhibits(request):
     page = "exhibition"
 
     query = request.GET.get('q', '')  # Get the search query from the request
-    exhibits = list(Exhibit.objects.all())
+    exhibits = Exhibit.objects.all()
     # random.shuffle(exhibits)
 
     if query:
@@ -180,6 +180,7 @@ def contact_view(request):
         )
 
         return HttpResponseRedirect('thanks/')  # Redirect to thank you page
+
 
 def download_pdf(request):
     pdf_path = os.path.join(settings.MEDIA_ROOT, 'catalogue.pdf')
